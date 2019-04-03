@@ -160,9 +160,18 @@ class Operations
                 prev=curr;
                 curr=curr->next;
             }
-            prev->next=NULL;
-            delete curr;
-            cout<<"Last element deleted"<<endl;
+            if(prev==NULL)
+            {
+                start=NULL;
+                delete(curr);
+                cout<<"The list is empty now."<<endl;
+            }
+            else
+            {
+                prev->next=NULL;
+                delete curr;
+                cout<<"Last element deleted"<<endl;
+            }
         }
     }
     void display()
