@@ -5,11 +5,6 @@ class node
     public:
         int data;
         node *next;
-        node()
-        {
-            data=0;
-            next=NULL;
-        }
 };
 class Operations
 {
@@ -23,13 +18,8 @@ class Operations
     node *NewNode(int x)
     {
         node *temp=new node;
-        if(temp==NULL)
-            cout<<"Node creation failed"<<endl;
-        else
-        {
-            temp->data=x;
-            temp->next=NULL;
-        }
+        temp->data=x;
+        temp->next=NULL;
         return temp;
     }
     void insertfront()
@@ -60,16 +50,31 @@ class Operations
         prev=NULL;
         if(start==NULL)
         {
-            cout<<"EMPTY LIST!"<<endl;        }
+            start = temp;
+            cout<<"First Node created"<<endl;
+        }
         else
         {
-            while(curr->data < temp->data && curr!=NULL)
+            while(curr->data < temp->data && curr->next!=NULL)
             {
                 prev=curr;
                 curr=curr->next;
             }
+            if(prev==NULL)
+            {
+                temp->next=start;
+                start=temp;
+            }
+            else
+                if(curr->next==NULL)
+            {
+                curr->next=temp;
+            }
+            else
+            {
                 prev->next=temp;
                 temp->next=curr;
+            }
             cout<<"Data inserted"<<endl;
         }
     }
@@ -82,11 +87,12 @@ class Operations
         last=start;
         if(start==NULL)
         {
-            cout<<"EMPTY LIST!"<<endl;
+            start = temp;
+            cout<<"First Node created"<<endl;
         }
         else
         {
-            while(last->next==NULL)
+            while(last->next!=NULL)
             {
                 last=last->next;
             }
