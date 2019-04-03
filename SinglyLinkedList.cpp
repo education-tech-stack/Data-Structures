@@ -128,7 +128,7 @@ class Operations
         }
         else
         {
-            while(curr->data!=a && curr->next!=NULL)
+            while(curr->data != a && curr->next!=NULL)
             {
                 prev=curr;
                 curr=curr->next;
