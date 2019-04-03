@@ -68,21 +68,8 @@ class Operations
                 prev=curr;
                 curr=curr->next;
             }
-            if(prev==NULL)
-            {
-                temp->next=start;
-                start=temp;
-            }
-            else
-                if(curr==NULL)
-            {
-                prev->next=temp;
-            }
-            else
-            {
                 prev->next=temp;
                 temp->next=curr;
-            }
             cout<<"Data inserted"<<endl;
         }
     }
