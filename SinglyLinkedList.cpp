@@ -13,7 +13,7 @@ class Operations
     node *start,*last;
     Operations()
     {
-        start=NULL;
+        start=last=NULL;
     }
     node *NewNode(int x)
     {
@@ -106,7 +106,7 @@ class Operations
         temp=start;
         if(start==NULL)
         {
-            cout<<"EMPTY LIST!";
+            cout<<"EMPTY LIST!"<<endl;
         }
         else
         {
@@ -124,7 +124,7 @@ class Operations
         prev=NULL;
         if(start==NULL)
         {
-            cout<<"EMPTY LIST!";
+            cout<<"EMPTY LIST!"<<endl;
         }
         else
         {
@@ -213,7 +213,7 @@ class Operations
         temp=start;
         if(start==NULL)
         {
-            cout<<"EMPTY LIST";
+            cout<<"EMPTY LIST"<<endl;
         }
         else
         {
