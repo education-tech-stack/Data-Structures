@@ -8,9 +8,9 @@ class node
 };
 class Operations
 {
-    int a;
     public:
-    node *start;
+    int a;
+    node *start,*last;
     Operations()
     {
         start=NULL;
@@ -80,7 +80,7 @@ class Operations
     }
     void insertlast()
     {
-        node *temp,*last;
+        node *temp;
         cout<<"Enter data";
         cin>>a;
         temp=NewNode(a);
@@ -128,7 +128,7 @@ class Operations
         }
         else
         {
-            while(curr->data != a && curr->next!=NULL)
+            /*while(curr->data != a && curr->next!=NULL)    //to delete first found
             {
                 prev=curr;
                 curr=curr->next;
@@ -141,8 +141,41 @@ class Operations
             {
                 prev->next=curr->next;
                 delete curr;
+            }*/
+            rec(a,curr,prev);      //to delete multiple
+            cout<<"Element(s) deleted"<<endl;
+        }
+    }
+    void rec(int a,node *curr,node *prev)       //to delete multiple elememts 
+    {
+        node *temp=curr;
+        if(a==curr->data)
+        {
+            if(temp==start)
+            {
+                curr=curr->next;
+                start=curr;
+                delete temp;;
+            }
+            else
+            {
+                curr=curr->next;
+                prev->next=curr;
+                if(temp==last)
+                {
+                    last=prev;
+                    prev->next=NULL;
+                }
+                delete temp;
             }
         }
+        else
+        {
+            prev=curr;
+            curr=curr->next;
+        }
+        if(curr!=NULL)
+            rec(a,curr,prev);
     }
     void deletelast()
     {
