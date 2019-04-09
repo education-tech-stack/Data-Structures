@@ -13,7 +13,7 @@ class Operations
     node *start,*last;
     Operations()
     {
-        start=last=NULL;
+        start=NULL;
     }
     node *NewNode(int x)
     {
@@ -128,7 +128,7 @@ class Operations
         }
         else
         {
-            /*while(curr->data != a && curr->next!=NULL)    //to delete first found
+            /*while(curr->data != a && curr->next!=NULL)     //to delete first come
             {
                 prev=curr;
                 curr=curr->next;
@@ -142,11 +142,11 @@ class Operations
                 prev->next=curr->next;
                 delete curr;
             }*/
-            rec(a,curr,prev);      //to delete multiple
+            rec(a,curr,prev);      //to delete multiple elements
             cout<<"Element(s) deleted"<<endl;
         }
     }
-    void rec(int a,node *curr,node *prev)       //to delete multiple elememts 
+    void rec(int a,node *curr,node *prev)      //recursive function to delete multiple elements
     {
         node *temp=curr;
         if(a==curr->data)
@@ -213,7 +213,7 @@ class Operations
         temp=start;
         if(start==NULL)
         {
-            cout<<"EMPTY LIST"<<endl;
+            cout<<"EMPTY LIST";
         }
         else
         {
