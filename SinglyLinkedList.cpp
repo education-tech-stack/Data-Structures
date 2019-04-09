@@ -143,7 +143,6 @@ class Operations
                 delete curr;
             }*/
             rec(a,curr,prev);      //to delete multiple elements
-            cout<<"Element(s) deleted"<<endl;
         }
     }
     void rec(int a,node *curr,node *prev)      //recursive function to delete multiple elements
@@ -155,7 +154,8 @@ class Operations
             {
                 curr=curr->next;
                 start=curr;
-                delete temp;;
+                delete temp;
+                cout<<"Element deleted from start"<<endl;
             }
             else
             {
@@ -165,7 +165,10 @@ class Operations
                 {
                     last=prev;
                     prev->next=NULL;
+                    cout<<"Element deleted from last"<<endl;
                 }
+                else
+                    cout<<"Element deleted from mid"<<endl;
                 delete temp;
             }
         }
@@ -176,6 +179,8 @@ class Operations
         }
         if(curr!=NULL)
             rec(a,curr,prev);
+            else
+                cout<<"Element NOT FOUND"<<endl;
     }
     void deletelast()
     {
