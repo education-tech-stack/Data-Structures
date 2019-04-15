@@ -132,7 +132,7 @@ class tree
         cout<<curr->data<<" deleted form tree"<<endl;
         delete curr;
     }
-    void deletehavingboth(leaf* &curr,leaf* &parent)
+    void deletehavingboth(leaf* &curr,leaf* &parent).   //to update
     {
         leaf* inos;
         inos=curr->right;
