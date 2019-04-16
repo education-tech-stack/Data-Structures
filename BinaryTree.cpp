@@ -136,6 +136,7 @@ class tree
     {
         leaf* inos;
         inos=curr->right;
+        parent=curr;      //if curr=ROOT & parent=NULL
         while(inos->left!=NULL)
         {
             parent=inos;
@@ -177,7 +178,7 @@ class tree
                 cout<<"Root deleted"<<endl;
             }else if(curr==NULL)
             {
-                cout<<"Element NOT FOUND";
+                cout<<"Element NOT FOUND"<<endl;
                 return;
             }
             else if(curr->left==NULL  &&  curr->right==NULL)
@@ -194,7 +195,7 @@ main()
     tree bt;
     int opn;
     do{
-        cout<<"1. Insert\n2. Delete\n3. Display"<<endl;
+        cout<<"1. Insert\n2. Delete\n3. Display\n0. EXIT"<<endl;
         cin>>opn;
         switch(opn){
             case 1:
